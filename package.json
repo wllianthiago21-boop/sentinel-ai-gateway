@@ -1,0 +1,55 @@
+{
+  "name": "sentinel-ai-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "author": "Willian Thiago (WILLTEC) <236711791+wllianthiago21-boop@users.noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wllianthiago21-boop/sentinel-ai-gateway.git"
+  },
+  "packageManager": "npm@11.6.2",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "vinext dev",
+    "build": "vinext build",
+    "start": "vinext start",
+    "test": "node --experimental-strip-types --test tests/security-engine.test.ts tests/api-contract.test.ts",
+    "test:site": "npm run build && node --test tests/rendered-html.test.mjs",
+    "check": "npm run lint && npm run test && npm run test:site",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "db:generate": "drizzle-kit generate"
+  },
+  "dependencies": {
+    "next": "16.2.10",
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.44.0",
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "@vitejs/plugin-rsc": "0.5.26",
+    "drizzle-kit": "1.0.0-rc.4",
+    "drizzle-orm": "1.0.0-rc.4",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.2.6",
+    "react-server-dom-webpack": "19.2.7",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3",
+    "vinext": "0.0.50",
+    "vite": "8.1.4",
+    "wrangler": "4.110.0"
+  },
+  "overrides": {
+    "next": {
+      "postcss": "8.5.19"
+    }
+  },
+  "type": "module"
+}
